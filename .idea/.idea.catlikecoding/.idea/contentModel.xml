@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets/Scripts" t="Include">
+        <e p="CameraTransformation.cs" t="Include" />
+        <e p="Grid.cs" t="Include" />
+        <e p="PositionTransformation.cs" t="Include" />
+        <e p="RotateTransformation.cs" t="Include" />
+        <e p="ScaleTransformation.cs" t="Include" />
+        <e p="Transformation.cs" t="Include" />
+        <e p="TransformationGrid.cs" t="Include" />
+      </e>
+      <e p="Assets/Shaders" t="Include">
+        <e p="My First Lighting Shader.shader" t="Include" />
+        <e p="My First Shader.shader" t="Include" />
+        <e p="My Lighting.cginc" t="Include" />
+        <e p="Texture Splatting.shader" t="Include" />
+        <e p="Textured With Detail.shader" t="Include" />
+      </e>
+      <e p="catlikecoding.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_catlikecoding.-1145111041.00" t="ExcludeRecursive" />
+  </component>
+</project>
