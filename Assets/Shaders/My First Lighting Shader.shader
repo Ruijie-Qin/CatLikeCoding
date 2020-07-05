@@ -22,12 +22,36 @@ Shader "Custom/My First Lighting Shader"
             CGPROGRAM
             
             #pragma target 3.0
+            #pragma multi_compile _ VERTEXLIGHT_ON
             #pragma vertex MyVertexProgram
             #pragma fragment MyFragmentProgram
+            
+            #define FORWARD_BASE_PASS
             
             #include "My Lighting.cginc"
             
             ENDCG
+	    }
+	    
+	    Pass
+	    {
+	        Tags {
+	            "LightMode" = "ForwardAdd"
+	        }
+	        
+	        Blend One One
+	        ZWrite Off
+	        
+	        CGPROGRAM
+	        #pragma target 3.0
+	        #pragma vertex MyVertexProgram
+	        #pragma fragment MyFragmentProgram
+	        //#pragma multi_compile DIRECTIONAL POINT SPOT
+	        #pragma multi_compile_fwdadd
+	        //#define POINT
+	        
+	        #include "My Lighting.cginc"
+	        ENDCG
 	    }
 	}
 }
