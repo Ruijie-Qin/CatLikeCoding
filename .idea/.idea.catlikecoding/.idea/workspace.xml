@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bf6724d-e199-4255-9b0b-0d52c1069bb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/point-cookie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/point-cookie.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/spotlight-cookie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/spotlight-cookie.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/marble-detail-normalmap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/marble-detail-normalmap.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/HeightMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/HeightMaterial.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/MyFirstLightingMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MyFirstLightingMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/myfirstlighting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/myfirstlighting.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/marble-detail.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/marble-detail.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/marble-heights.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/marble-heights.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Bumpiness.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Bumpiness.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Shaders/My First Lighting Shader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/My First Lighting Shader.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +26,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9BF11359-B4D8-4CD0-B349-8565331B6DCC/aa/cc86ed62/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaleTransformation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Textured With Detail.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Temp/ParsedCombinations-Custom-My First Lighting Shader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RotateTransformation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/My First Shader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9BF11359-B4D8-4CD0-B349-8565331B6DCC/d6/241e457c/Transform.cs" root0="SKIP_HIGHLIGHTING" />
@@ -36,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9BF11359-B4D8-4CD0-B349-8565331B6DCC/e4/938fdfac/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TransformationGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scene/Bumpiness.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Transformation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/My First Lighting Shader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraTransformation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -54,8 +54,8 @@
         <option value="$PROJECT_DIR$/Assets/Shaders/Texture Splatting.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Textured With Detail.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" />
         <option value="$PROJECT_DIR$/Assets/Shaders/My First Lighting Shader.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" />
       </list>
     </option>
   </component>
@@ -111,7 +111,8 @@
       <option name="presentableId" value="Default" />
       <updated>1592624966490</updated>
       <workItem from="1592624970882" duration="25074000" />
-      <workItem from="1593867673823" duration="24541000" />
+      <workItem from="1593867673823" duration="26952000" />
+      <workItem from="1594297783234" duration="4025000" />
     </task>
     <servers />
   </component>
@@ -125,7 +126,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -5,8 +5,11 @@
 #include "UnityPBSLighting.cginc"
 
 float4 _Tint;
-sampler2D _MainTex;
-float4 _MainTex_ST;
+sampler2D _MainTex, _DetailTex;
+float4 _MainTex_ST, _DetailTex_ST;
+sampler2D _NormalMap, _DetailNormalMap;
+float _BumpScale, _DetailBumpScale;
+
 float _Smoothness;
 //float4 _SpecularTint;
 float _Metallic;
@@ -21,7 +24,7 @@ struct VertexData
 struct Interpolators
 {
     float4 position : SV_POSITION;
-    float2 uv : TEXCOORD0;
+    float4 uv : TEXCOORD0;
     float3 normal : TEXCOORD1;
     float3 worldPos: TEXCOORD2;
     #if defined(VERTEXLIGHT_ON)
@@ -49,7 +52,8 @@ void ComputeVertexLightColor (inout Interpolators i)
 Interpolators MyVertexProgram(VertexData v)
 {
     Interpolators i;
-    i.uv = TRANSFORM_TEX(v.uv, _MainTex);
+    i.uv.xy = TRANSFORM_TEX(v.uv, _MainTex);
+    i.uv.zw = TRANSFORM_TEX(v.uv, _DetailTex);
     i.position = UnityObjectToClipPos(v.position);
     i.normal = UnityObjectToWorldNormal(v.normal);
     i.worldPos = mul(unity_ObjectToWorld, v.position);
@@ -94,32 +98,29 @@ UnityLight CreateLight (Interpolators i)
     return light;
 }
 
+void InitializeFragmentNormal(inout Interpolators i)
+{   
+    //i.normal.xy = tex2D(_NormalMap, i.uv).wy * 2 - 1;
+    //i.normal.xy *= _BumpScale;
+    //i.normal.z = sqrt(1 - saturate(dot(i.normal.xy, i.normal.xy)));
+    float3 mainNormal = UnpackScaleNormal(tex2D(_NormalMap, i.uv.xy), _BumpScale);
+    float3 detailNormal = UnpackScaleNormal(tex2D(_DetailNormalMap, i.uv.zw), _DetailBumpScale);
+    //i.normal = float3(mainNormal.xy / mainNormal.z + detailNormal.xy / detailNormal.z, 1);
+    i.normal = BlendNormals(mainNormal, detailNormal);
+    i.normal = i.normal.xzy;
+    //i.normal = normalize(i.normal);
+}
+
 float4 MyFragmentProgram(Interpolators i) : SV_TARGET
 {
-    i.normal = normalize(i.normal);
-    //float3 lightDir = _WorldSpaceLightPos0.xyz;
+    InitializeFragmentNormal(i);
     float3 viewDir = normalize(_WorldSpaceCameraPos - i.worldPos);
-    //float3 lightColor = _LightColor0.rgb;
-    float3 albedo = tex2D(_MainTex, i.uv).rgb * _Tint.rgb;
+    float3 albedo = tex2D(_MainTex, i.uv.xy).rgb * _Tint.rgb;
+    albedo *= tex2D(_DetailTex, i.uv.zw) * unity_ColorSpaceDouble;
     float3 specularTint;// = albedo * _Metallic;
     float oneMinusRelfectivity;// = 1 - _Metallic;
     albedo = DiffuseAndSpecularFromMetallic(albedo, _Metallic, specularTint, oneMinusRelfectivity);
-    //albedo *= oneMinusRelfectivity;
-    //albedo = EnergyConservationBetweenDiffuseAndSpecular(albedo, _SpecularTint.rgb,
-    //    oneMinusRelfectivity);
-    //albedo *= 1 - max(_SpecularTint.r, max(_SpecularTint.g, _SpecularTint.b));
-    //float3 diffuse = albedo * lightColor * DotClamped(lightDir, i.normal);
-    //float3 reflectionDir = reflect(-lightDir, i.normal);
-    //float3 halfVector = normalize(lightDir +  viewDir);
-    //float3 specular = specularTint * lightColor * pow(DotClamped(halfVector, i.normal), _Smoothness * 100);
-    //return float4(diffuse + specular, 1);
-    //UnityLight light;
-    //light.color = lightColor;
-    //light.dir = lightDir;
-    //light.ndotl = DotClamped(i.normal, lightDir);
-    //UnityIndirect indirectLight;
-    //indirectLight.diffuse = 0;
-    //indirectLight.specular = 0;
+    
     
     return UNITY_BRDF_PBS(albedo, specularTint, oneMinusRelfectivity,
         _Smoothness, i.normal, viewDir, CreateLight(i), CreateIndirectLight(i));
