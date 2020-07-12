@@ -86,8 +86,10 @@
     <Compile Include="Assets\Scripts\PositionTransformation.cs" />
     <Compile Include="Assets\Scripts\RotateTransformation.cs" />
     <Compile Include="Assets\Scripts\ScaleTransformation.cs" />
+    <Compile Include="Assets\Scripts\TangentSpaceVisualizer.cs" />
     <Compile Include="Assets\Scripts\Transformation.cs" />
     <Compile Include="Assets\Scripts\TransformationGrid.cs" />
+    <None Include="Assets\Shaders\My Shadows.cginc" />
     <None Include="Assets\Shaders\Textured With Detail.shader" />
     <None Include="Assets\Shaders\My First Shader.shader" />
     <None Include="Assets\Shaders\My Lighting.cginc" />

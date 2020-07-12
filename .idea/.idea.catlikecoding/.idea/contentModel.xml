@@ -9,6 +9,7 @@
         <e p="PositionTransformation.cs" t="Include" />
         <e p="RotateTransformation.cs" t="Include" />
         <e p="ScaleTransformation.cs" t="Include" />
+        <e p="TangentSpaceVisualizer.cs" t="Include" />
         <e p="Transformation.cs" t="Include" />
         <e p="TransformationGrid.cs" t="Include" />
       </e>
@@ -16,6 +17,7 @@
         <e p="My First Lighting Shader.shader" t="Include" />
         <e p="My First Shader.shader" t="Include" />
         <e p="My Lighting.cginc" t="Include" />
+        <e p="My Shadows.cginc" t="Include" />
         <e p="Texture Splatting.shader" t="Include" />
         <e p="Textured With Detail.shader" t="Include" />
       </e>
