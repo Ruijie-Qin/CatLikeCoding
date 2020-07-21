@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets/Editor" t="Include">
+        <e p="MyLightingShaderGUI.cs" t="Include" />
+      </e>
       <e p="Assets/Scripts" t="Include">
         <e p="CameraTransformation.cs" t="Include" />
         <e p="Grid.cs" t="Include" />

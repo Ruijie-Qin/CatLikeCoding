@@ -12,7 +12,7 @@ Shader "Custom/My First Lighting Shader"
         _BumpScale ("Bump Scale", Float) = 1
         _Smoothness("Smoothness", Range(0, 1)) = 0.5
         [Gamma] _Metallic ("Metallic", Range(0, 1)) = 0
-        _DetailTex ("Detail Texture", 2D) = "gray" {}
+        _DetailTex ("Detail Albedo", 2D) = "gray" {}
         [NoScaleOffset] _DetailNormalMap ("Detail Normals", 2D) = "bump" {}
         _DetailBumpScale ("Detail Bump Scale", Float) =  1
         //_SpecularTint("SpecularTint", Color) = (0.5, 0.5, 0.5)
@@ -87,4 +87,6 @@ Shader "Custom/My First Lighting Shader"
             ENDCG
 	    }
 	}
+	
+	CustomEditor "MyLightingShaderGUI"
 }
