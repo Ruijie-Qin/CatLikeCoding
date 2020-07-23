@@ -16,6 +16,7 @@ float _BumpScale, _DetailBumpScale;
 
 float _Smoothness;
 //float4 _SpecularTint;
+sampler2D _MetallicMap;
 float _Metallic;
 
 struct VertexData
@@ -49,6 +50,25 @@ struct Interpolators
         float3 vertexLightColor : TEXCOORD6;
     #endif
 };
+
+float GetMetallic (Interpolators i)
+{
+    #if defined(_METALLIC_MAP)
+        return tex2D(_MetallicMap, i.uv.xy).r;
+    #else
+        return _Metallic;
+    #endif
+}
+
+float GetSmoothness (Interpolators i)
+{
+    #if defined(_METALLIC_MAP)
+        return tex2D(_MetallicMap, i.uv.xy).a * _Smoothness;
+    #else
+        return _Smoothness;
+    #endif
+}
+
 
 void ComputeVertexLightColor (inout Interpolators i)
 {
@@ -134,7 +154,7 @@ UnityIndirect CreateIndirectLight (Interpolators i, float3 viewDir)
         //float4 envSample = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, reflectionDir, roughness * UNITY_SPECCUBE_LOD_STEPS);
         //indirectLight.specular = DecodeHDR(envSample, unity_SpecCube0_HDR);
         Unity_GlossyEnvironmentData envData;
-        envData.roughness = 1 - _Smoothness;
+        envData.roughness = 1 - GetSmoothness(i);
         envData.reflUVW = BoxProjection(reflectionDir, i.worldPos, unity_SpecCube0_ProbePosition,
             unity_SpecCube0_BoxMin, unity_SpecCube0_BoxMax);
         float3 probe0 = Unity_GlossyEnvironment(
@@ -217,11 +237,11 @@ float4 MyFragmentProgram(Interpolators i) : SV_TARGET
     albedo *= tex2D(_DetailTex, i.uv.zw) * unity_ColorSpaceDouble;
     float3 specularTint;// = albedo * _Metallic;
     float oneMinusRelfectivity;// = 1 - _Metallic;
-    albedo = DiffuseAndSpecularFromMetallic(albedo, _Metallic, specularTint, oneMinusRelfectivity);
+    albedo = DiffuseAndSpecularFromMetallic(albedo, GetMetallic(i), specularTint, oneMinusRelfectivity);
     
     
     return UNITY_BRDF_PBS(albedo, specularTint, oneMinusRelfectivity,
-        _Smoothness, i.normal, viewDir, CreateLight(i), CreateIndirectLight(i, viewDir));
+        GetSmoothness(i), i.normal, viewDir, CreateLight(i), CreateIndirectLight(i, viewDir));
 }
 
 #endif

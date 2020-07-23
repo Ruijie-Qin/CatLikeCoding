@@ -8,9 +8,11 @@ public class MyLightingShaderGUI : ShaderGUI
 	static GUIContent staticLabel = new GUIContent();
 	private MaterialEditor editor;
 	private MaterialProperty[] properties;
+	private Material target;
 	
 	public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
 	{
+		this.target = materialEditor.target as Material;
 		this.editor = materialEditor;
 		this.properties = properties;
 		DoMain();
@@ -41,10 +43,25 @@ public class MyLightingShaderGUI : ShaderGUI
 	
 	void DoMatellic()
 	{
-		MaterialProperty slider = FindProperty("_Metallic");
-		EditorGUI.indentLevel += 2;
-		editor.ShaderProperty(slider, MakeLabel(slider));
-		EditorGUI.indentLevel -= 2;
+		MaterialProperty map = FindProperty("_MetallicMap");
+		EditorGUI.BeginChangeCheck();
+		editor.TexturePropertySingleLine(MakeLabel(map, "Metallic (R)"), map, map.textureValue ? null : FindProperty("_Metallic"));
+		if (EditorGUI.EndChangeCheck())
+		{
+			SetKeyword("_METALLIC_MAP", map.textureValue);
+		}
+	}
+
+	void SetKeyword(string keyword, bool state)
+	{
+		if (state)
+		{
+			target.EnableKeyword(keyword);
+		}
+		else
+		{
+			target.DisableKeyword(keyword);
+		}
 	}
 	
 	void DoSmoothness()

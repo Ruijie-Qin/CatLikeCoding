@@ -2,22 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bf6724d-e199-4255-9b0b-0d52c1069bb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/MyLightingShaderGUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/MyLightingShaderGUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/MyReflectMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/MyReflectMaterial.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scene/Reflection Scene 1.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scene/Reflection Scene 1.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scene/Reflection Scene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scene/Reflection Scene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/CircuitMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/CircuitMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-albedo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-albedo.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-metallic-smoothness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-metallic-smoothness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-metallic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-metallic.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-normals.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-normals.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-smoothness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/circuitry-smoothness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scene/Circuit.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scene/Circuit.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/myfirstlighting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/myfirstlighting.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/MyLightingShaderGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/MyLightingShaderGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MyFirstLightingMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MyFirstLightingMaterial.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Shaders/My First Lighting Shader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/My First Lighting Shader.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catlikecoding.sln" beforeDir="false" afterPath="$PROJECT_DIR$/catlikecoding.sln" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +34,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9BF11359-B4D8-4CD0-B349-8565331B6DCC/aa/cc86ed62/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaleTransformation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Temp/ParsedCombinations-Custom-My First Lighting Shader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Textured With Detail.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RotateTransformation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/My First Shader.shader" root0="FORCE_HIGHLIGHTING" />
@@ -66,9 +70,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TangentSpaceVisualizer.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/My Shadows.cginc" />
-        <option value="$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" />
         <option value="$PROJECT_DIR$/Assets/Shaders/My First Lighting Shader.shader" />
         <option value="$PROJECT_DIR$/Assets/Editor/MyLightingShaderGUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/My Lighting.cginc" />
       </list>
     </option>
   </component>
@@ -127,7 +131,7 @@
       <workItem from="1593867673823" duration="26952000" />
       <workItem from="1594297783234" duration="4367000" />
       <workItem from="1594439474689" duration="12468000" />
-      <workItem from="1595040095469" duration="10517000" />
+      <workItem from="1595040095469" duration="14405000" />
     </task>
     <servers />
   </component>
