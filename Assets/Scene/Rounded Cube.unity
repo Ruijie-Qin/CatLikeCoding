@@ -210,6 +210,7 @@ MonoBehaviour:
   xSize: 3
   ySize: 2
   zSize: 4
+  isDoubleSide: 0
 --- !u!23 &1886708116
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -224,7 +225,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: ec631b07c129d404a9f85a49567277d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
