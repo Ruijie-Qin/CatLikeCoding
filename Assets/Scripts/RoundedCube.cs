@@ -8,9 +8,12 @@ public class RoundedCube : MonoBehaviour
     public int xSize, ySize, zSize;
     // 三角形是否需要双面
     public bool isDoubleSide = false;
+    public int roundness;
+    public bool isInnerCube;
     
     private Mesh m_mesh;
     private Vector3[] m_vertices;
+    private Vector3[] m_normals;
 
     private void Awake()
     {
@@ -32,6 +35,7 @@ public class RoundedCube : MonoBehaviour
         int edgeVertice = (xSize + ySize + zSize - 3) * 4;
         int faceVertice = ((xSize - 1) * (ySize - 1) + (xSize - 1) * (zSize - 1) + (ySize - 1) * (zSize - 1)) * 2;
         m_vertices = new Vector3[cornerVertices + edgeVertice + faceVertice];
+        m_normals = new Vector3[m_vertices.Length];
 
         int v = 0;
         // 绘制边框
@@ -39,22 +43,22 @@ public class RoundedCube : MonoBehaviour
         {
             for (int x = 0; x <= xSize; x++)
             {
-                m_vertices[v++] = new Vector3(x, y, 0);
+                SetVertex(v++, x, y, 0);
             }
 
             for (int z = 1; z <= zSize; z++)
             {
-                m_vertices[v++] = new Vector3(xSize, y, z);
+                SetVertex(v++, xSize, y, z);
             }
 
             for (int x = xSize - 1; x >= 0; x--)
             {
-                m_vertices[v++] = new Vector3(x, y, zSize);
+                SetVertex(v++, x, y, zSize);
             }
 
             for (int z = zSize - 1; z > 0; z--)
             {
-                m_vertices[v++] = new Vector3(0, y, z);
+                SetVertex(v++, 0, y, z);
             }
         }
         // 绘制顶部
@@ -62,7 +66,7 @@ public class RoundedCube : MonoBehaviour
         {
             for (int x = 1; x < xSize; x++)
             {
-                m_vertices[v++] = new Vector3(x, ySize, z);
+                SetVertex(v++, x, ySize, z);
             }
         }
         // 绘制底部
@@ -70,11 +74,54 @@ public class RoundedCube : MonoBehaviour
         {
             for (int x = 1; x < xSize; x++)
             {
-                m_vertices[v++] = new Vector3(x, 0, z);
+                SetVertex(v++, x, 0, z);
             }
         }
 
         m_mesh.vertices = m_vertices;
+        m_mesh.normals = m_normals;
+    }
+
+    private void SetVertex(int i, float x, float y, float z)
+    {
+        Vector3 inner = m_vertices[i] = new Vector3(x, y, z);
+
+        if (inner.x < roundness)
+        {
+            inner.x = roundness;
+        }
+        else if (inner.x > xSize - roundness)
+        {
+            inner.x = xSize - roundness;
+        }
+
+        if (inner.y < roundness)
+        {
+            inner.y = roundness;
+        }
+        else if (inner.y > ySize - roundness)
+        {
+            inner.y = ySize - roundness;
+        }
+        
+        if (inner.z < roundness)
+        {
+            inner.z = roundness;
+        }
+        else if (inner.z > zSize - roundness)
+        {
+            inner.z = zSize - roundness;
+        }
+
+        m_normals[i] = (m_vertices[i] - inner).normalized;
+        if (isInnerCube)
+        {
+            m_vertices[i] = inner;
+        }
+        else
+        {
+            m_vertices[i] = inner + m_normals[i] * roundness;
+        }
     }
 
     private void CreateTriangles()
@@ -187,10 +234,12 @@ public class RoundedCube : MonoBehaviour
             return;
         }
         
-        Gizmos.color = Color.black;
         for (int i = 0; i < m_vertices.Length; i++)
         {
+            Gizmos.color = Color.black;
             Gizmos.DrawSphere(transform.TransformPoint(m_vertices[i]), 0.1f);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawRay(transform.TransformPoint(m_vertices[i]), m_normals[i]);
         }
     }
 

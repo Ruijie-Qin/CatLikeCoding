@@ -20,22 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf6724d-e199-4255-9b0b-0d52c1069bb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RoundedCube.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RoundedCube.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RoundedCube.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RoundedCube.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.catlikecoding/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Rounded Cube.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Rounded Cube.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catlikecoding.sln" beforeDir="false" afterPath="$PROJECT_DIR$/catlikecoding.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoundedCube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoundedCube.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +128,7 @@
       <workItem from="1594297783234" duration="4367000" />
       <workItem from="1594439474689" duration="12468000" />
       <workItem from="1595040095469" duration="14405000" />
-      <workItem from="1603435278695" duration="10042000" />
+      <workItem from="1603435278695" duration="14305000" />
     </task>
     <servers />
   </component>
@@ -182,13 +168,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/RoundedCube.cs</url>
-          <line>80</line>
+          <line>127</line>
           <properties documentPath="G:\GitProject\CatLikeCoding\Assets\Scripts\RoundedCube.cs" initialLine="79">
             <startOffsets>
-              <option value="2056" />
+              <option value="3103" />
             </startOffsets>
             <endOffsets>
-              <option value="2057" />
+              <option value="3104" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
